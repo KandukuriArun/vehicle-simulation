@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vehicle Movement Simulation</title>
+
+  <!-- ✅ Leaflet CSS (no integrity or crossorigin) -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <!-- ✅ Your project CSS -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Vehicle Movement Simulation</h1>
+      <div class="controls">
+        <button id="playPauseBtn">Play</button>
+        <label>Speed:
+          <input id="speedRange" type="range" min="0.25" max="4" value="1" step="0.25" />
+          <span id="speedValue">1×</span>
+        </label>
+        <button id="resetBtn">Reset</button>
+      </div>
+    </header>
+
+    <main>
+      <div id="map"></div>
+      <aside id="info">
+        <h3>Live Data</h3>
+        <div class="data-row"><strong>Latitude:</strong> <span id="lat">—</span></div>
+        <div class="data-row"><strong>Longitude:</strong> <span id="lng">—</span></div>
+        <div class="data-row"><strong>Timestamp:</strong> <span id="timestamp">—</span></div>
+        <div class="data-row"><strong>Elapsed:</strong> <span id="elapsed">00:00:00</span></div>
+        <div class="data-row"><strong>Speed:</strong> <span id="speed">— km/h</span></div>
+        <div class="data-row"><strong>Progress:</strong> <span id="progress">0 / 0</span></div>
+      </aside>
+    </main>
+
+    <footer>
+      <small>
+        Frontend-only demo — Leaflet + vanilla JS. Dummy route loaded from
+        <code>dummy-route.json</code>.
+      </small>
+    </footer>
+  </div>
+
+  <!-- ✅ Load Leaflet JS first (no integrity or crossorigin) -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- ✅ Then your custom JS -->
+  <script src="./app.js"></script>
+</body>
+</html>
